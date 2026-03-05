@@ -11,8 +11,10 @@
     <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
 
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+   
 
     <script type="text/babel">
+   
       function UserMessage({ message, sender }) {
         /*
         if (sender === "user") {
@@ -23,6 +25,7 @@
             </div>
           );
         } */
+      
         return (
           <div>
             {sender === "bot" && <img src="robot.png" width="35" />}
@@ -43,15 +46,25 @@
         );
       }
      function App (){
+      const chatMessage =[
+      { message :'hello chat bot',
+        sender :'user'
+       },
+       {
+        message :'hello can i help you',
+        sender :'bot'
+       },
+       {
+        message :'Sure! You got heads',
+        sender :'user'
+       }
+      ]
+      const chatMessagecomponets = chatMessage.map((chatMessage)=>{return(<UserMessage message={chatMessage.message} sender ={chatMessage.sender}/>)
+        
+      })
       return(<>
           <ChatbotInput />
-          <UserMessage message="hello chat bot" sender="user" />
-          <UserMessage message="hello can i help you" sender="bot" />
-          <UserMessage
-            message="Sorry, I didn't quite understand that. Currently, I only know how to flip a coin, roll a dice, or get today's date. Let me know how I can help!"
-            sender="bot"
-          />
-          <UserMessage message="Sure! You got heads" sender="user" />
+         {chatMessagecomponets }
         </>);
      };
      
