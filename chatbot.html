@@ -13,15 +13,50 @@
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
 
     <script type="text/babel">
-        const button1 = <button>hi</button>
-        const paragraphe = <p>ohlala {2+2} </p>
-        const div =  
-        <div>
-          {paragraphe}
-          <button>hi </button>
-        </div>
+      function UserMessage({ message, sender }) {
+        /*
+        if (sender === "user") {
+          return (
+            <div>
+              {message}
+              <img src="user.png" width="35" />
+            </div>
+          );
+        } */
+        return (
+          <div>
+            {sender === "bot" && <img src="robot.png" width="35" />}
+            {message}
+            {sender === "user" && <img src="user.png" width="35" />}
+          </div>
+        );
+      }
+
+      function ChatbotInput() {
+        return (
+          <>
+            <input 
+              placeholder="send message to the chatbot" 
+              size="30" />
+            <button>Send</button>
+          </>
+        );
+      }
+     function App (){
+      return(<>
+          <ChatbotInput />
+          <UserMessage message="hello chat bot" sender="user" />
+          <UserMessage message="hello can i help you" sender="bot" />
+          <UserMessage
+            message="Sorry, I didn't quite understand that. Currently, I only know how to flip a coin, roll a dice, or get today's date. Let me know how I can help!"
+            sender="bot"
+          />
+          <UserMessage message="Sure! You got heads" sender="user" />
+        </>);
+     };
+     
       const container = document.querySelector(".js-container");
-      ReactDOM.createRoot(container).render(div);
+      ReactDOM.createRoot(container).render(<App/>);
     </script>
   </body>
 </html>
