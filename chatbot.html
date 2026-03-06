@@ -41,8 +41,8 @@
           </>
         );
       }
-      function ChatMessage (){
-        const chatMessage =[
+      function ChatMessage ( ){
+       const [chatMessages,setChatMessages]= React.useState([
       { message :'hello chat bot',
         sender :'user',
         id:'id1'
@@ -56,10 +56,22 @@
         message :'Sure! You got heads',
         sender :'user',
          id:'id3'
-       }]
+       }]);
+
+       function sendMessage(){
+       setChatMessages([
+        ...chatMessages,
+        {
+          message :'hello can i help you',
+          sender :'bot',
+          id:crypto.randomUUID()
+        }
+       ]);
+       }
        return(
         <>
-         {chatMessage.map((chatMessage) => {
+        <button onClick={sendMessage}>send Messag</button>
+         {chatMessages.map((chatMessage) => {
           return (
             
             <UserMessage
