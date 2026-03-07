@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>React Basics</title>
+    <link rel="stylesheet" href="styl.css">
   </head>
 
   <body>
@@ -120,10 +121,13 @@
         ]);
         return (
           <>
+          <div className="chat-messages-container">
             <ChatbotInput
               chatMessages={chatMessages}
               setChatMessages={setChatMessages}
             />
+            </div>
+            
             <ChatMessage chatMessages={chatMessages} />
           </>
         );
