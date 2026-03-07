@@ -38,14 +38,16 @@
         function saveInput(event) {
           setInputText(event.target.value);
         }
-         function handleKeyDown(event) {
+        function handleKeyDown(event) {
+          
           if (event.key === 'Enter') {
             reciveMessage();
           } else if (event.key === 'Escape') {
             setInputText('');
           }
         }
-        function reciveMessage() {
+       async function reciveMessage() {
+         setInputText('');
           const newChatMessages =[
             ...chatMessages,
             {
@@ -53,18 +55,32 @@
               sender:"user",
               id: crypto.randomUUID(),
             },
+            
           ]
+            
+            
           setChatMessages(newChatMessages);
-          const response=Chatbot.getResponse(inputText)
           setChatMessages([
+            ...newChatMessages,{
+              message:"loading",
+              sender:"bot",
+              id: crypto.randomUUID(),
+            }
+          ]);
+          
+          const response=await Chatbot.getResponseAsync(inputText)
+          
+          setChatMessages([
+            
             ...newChatMessages,{
               message:response,
               sender:"bot",
               id: crypto.randomUUID(),
             }
           ])
-         setInputText('');
+       
         }
+        
         return (
           <>
             <input
