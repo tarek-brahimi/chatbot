@@ -1,12 +1,88 @@
-# React + Vite
+# 📱 React Chatbot
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **simple React chatbot project** for learning and experimenting with building conversational UIs.  
+It allows users to send messages and receive responses from a simulated bot.  
+This project is perfect for practicing **React Hooks**, **state management**, and **modular components**.
 
-Currently, two official plugins are available:
+> This repository is intended for learning and demonstration purposes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🖼 Demo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Here’s what the chatbot looks like in action:
+
+![Chatbot Screenshot](./CHATBOT-output.png)
+*Replace this image with a screenshot or GIF of your running chatbot.*
+
+---
+
+## 🚀 Features
+
+- 💬 Interactive chat interface built with React  
+- 🧠 Simulated bot responses  
+- 🖼 Display of user and bot avatars  
+- 🧹 Auto-scroll to the latest message  
+- 🛠 Simple, educational codebase for beginner React developers
+
+---
+
+## 📁 Project Structure
+
+
+chatbot-project/
+├── src/
+│ ├── components/
+│ │ ├── chatinput.jsx
+│ │ ├── chatMessage.jsx
+│ │ └── usermessage.jsx
+│ ├── assets/
+│ │ ├── robot.png
+│ │ └── user.png
+│ ├── App.jsx
+│ └── main.jsx
+├── public/
+├── package.json
+├── vite.config.js
+└── README.md
+
+
+---
+
+## 🧩 Installation
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/tarek-brahimi/chatbot.git
+cd chatbot/chatbot-project
+npm install
+▶️ Run Locally
+
+Start the development server:
+
+npm run dev
+
+Open your browser:
+
+http://localhost:5173
+🧠 How It Works
+
+App.jsx: main layout and chat state management
+
+ChatMessage.jsx: renders all messages and scrolls automatically
+
+ChatbotInput.jsx: handles user input and bot responses
+
+Images: display user and bot avatars
+📦 Dependencies
+
+React – UI library
+
+Vite – Fast development tooling
+
+supersimpledev – Helper for bot responses
+
+📄 License
+
+This project is open-source and free to use.
