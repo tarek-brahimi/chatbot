@@ -11,8 +11,7 @@ This project is perfect for practicing **React Hooks**, **state management**, an
 ## 🖼 Demo
 
 Here’s what the chatbot looks like in action:
-
-![Chatbot Screenshot](./CHATBOT-output.png)
+![Chatbot Screenshot](./output.png)
 *Replace this image with a screenshot or GIF of your running chatbot.*
 
 ---
